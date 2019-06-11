@@ -1,0 +1,9 @@
+p3 コメント
+- if commentable.comments.any?
+  ul
+    - commentable.comments.each do |comment|
+      li
+        |
+        = comment.body
+        |  | 
+        = link_to 'Destroy', [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' }
