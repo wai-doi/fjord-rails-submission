@@ -1,9 +1,8 @@
 class CommentsController < ApplicationController
   def create
-    comment = Comment.new(comment_params)
-    comment.commentable = commentable
-    if comment.save
-      redirect_to comment.commentable, notice: "コメントを投稿しました。"
+    @comment = @commentable.comments.new(comment_params)
+    if @comment.save
+      redirect_to @commentable, notice: "コメントを投稿しました。"
     end
   end
   
@@ -16,15 +15,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(
-      :body,
-      :commentable_id,
-      :commentable_type
-    )
-  end
-
-  def commentable
-    klass = params[:comment][:commentable_type].constantize
-    klass.find(params[:comment][:commentable_id])
+    params.require(:comment).permit(:body)
   end
 end

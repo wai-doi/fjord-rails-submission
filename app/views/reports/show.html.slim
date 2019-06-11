@@ -24,4 +24,4 @@ p3 コメント
         |  | 
         = link_to 'Destroy', report_comment_path(@report, comment), method: :delete, data: { confirm: 'Are you sure?' }
 
-= render 'comments/form', comment: [@report, @report.comments.build]
+= render partial: 'comments/form', locals: { commentable: @report }
