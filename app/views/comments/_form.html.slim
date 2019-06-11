@@ -1,0 +1,7 @@
+= form_with(model: comment, local: true) do |form|
+  = form.hidden_field :commentable_type
+  = form.hidden_field :commentable_id
+  .field
+    = form.text_area :body
+  .actions
+    = form.submit

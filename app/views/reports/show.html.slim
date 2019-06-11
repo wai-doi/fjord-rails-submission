@@ -24,8 +24,4 @@ p3 コメント
         |  | 
         = link_to 'Destroy', report_comment_path(@report, comment), method: :delete, data: { confirm: 'Are you sure?' }
 
-= form_with(model: [@report, @report.comments.build], local: true) do |form|
-  .field
-    = form.text_area :body
-  .actions
-    = form.submit
+= render 'comments/form', comment: [@report, @report.comments.build]
