@@ -1,4 +1,5 @@
-p3 コメント
+p3
+  = Comment.model_name.human(count: 2)
 - if commentable.comments.any?
   ul
     - commentable.comments.each do |comment|
@@ -6,4 +7,4 @@ p3 コメント
         |
         = comment.body
         |  | 
-        = link_to 'Destroy', [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to t('link.Destroy'), [commentable, comment], method: :delete, data: { confirm: 'Are you sure?' }
