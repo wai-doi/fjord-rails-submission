@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :reports do
     resources :comments, only: %i(create destroy), module: :reports
   end
