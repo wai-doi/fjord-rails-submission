@@ -2,6 +2,10 @@ p#notice
   = notice
 h1
   = Report.model_name.human(count: 2)
+
+= paginate @reports
+= page_entries_info @reports
+
 table
   thead
     tr
