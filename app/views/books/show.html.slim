@@ -1,0 +1,25 @@
+p#notice
+  = notice
+p
+  strong
+    | Title:
+  = @book.title
+p
+  strong
+    | Memo:
+  = @book.memo
+p
+  strong
+    | Author:
+  = @book.author
+p
+  strong
+    | Picture:
+  = image_tag(@book.picture_url) if @book.picture.present?
+= link_to 'Edit', edit_book_path(@book)
+|  | 
+= link_to 'Back', books_path
+
+hr
+= render partial: 'comments/comments', locals: { commentable: @book }
+= render partial: 'comments/form', locals: { commentable: @book }
