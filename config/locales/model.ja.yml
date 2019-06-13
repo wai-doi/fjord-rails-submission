@@ -4,6 +4,7 @@ ja:
       book: 書籍
       report: レポート
       comment: コメント
+      user: ユーザー
     attributes:
       book:
         title: タイトル
@@ -15,3 +16,8 @@ ja:
         body: 本文
       comment:
         body: 本文
+      user:
+        name: 名前
+        postcode: 郵便番号
+        address: 住所
+        biography: 自己紹介文
