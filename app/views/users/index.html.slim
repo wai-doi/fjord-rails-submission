@@ -1,0 +1,26 @@
+h1
+  = User.model_name.human(count: 2)
+
+hr
+- @users.each do |user|
+  p
+    strong
+      = User.human_attribute_name(:name)
+      | :
+    = user.name
+  p
+    strong
+      = User.human_attribute_name(:postcode)
+      | :
+    = user.postcode
+  p
+    strong
+      = User.human_attribute_name(:address)
+      | :
+    = user.address
+  p
+    strong
+      = User.human_attribute_name(:biography)
+      | :
+    = user.biography
+  hr
