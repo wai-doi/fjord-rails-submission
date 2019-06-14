@@ -64,3 +64,4 @@ gem 'carrierwave'
 
 gem 'slim-rails'
 gem 'html2slim'
+gem 'rails-i18n', '~> 5.1'

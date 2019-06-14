@@ -1,4 +1,4 @@
 h1
-  | New Book
+  = "#{t('h.New')} #{Book.model_name.human}"
 = render 'form', book: @book
-= link_to 'Back', books_path
+= link_to t('link.Back'), books_path

@@ -2,23 +2,27 @@ p#notice
   = notice
 p
   strong
-    | Title:
+    = Book.human_attribute_name(:title)
+    | :
   = @book.title
 p
   strong
-    | Memo:
+    = Book.human_attribute_name(:memo)
+    | :
   = @book.memo
 p
   strong
-    | Author:
+    = Book.human_attribute_name(:author)
+    | :
   = @book.author
 p
   strong
-    | Picture:
+    = Book.human_attribute_name(:picture)
+    | :
   = image_tag(@book.picture_url) if @book.picture.present?
-= link_to 'Edit', edit_book_path(@book)
+= link_to t('link.Edit'), edit_book_path(@book)
 |  | 
-= link_to 'Back', books_path
+= link_to t('link.Back'), books_path
 
 hr
 = render partial: 'comments/comments', locals: { commentable: @book }

@@ -1,6 +1,6 @@
 h1
-  | Editing Book
+  = "#{t('h.Editing')} #{Book.model_name.human}"
 = render 'form', book: @book
-= link_to 'Show', @book
+= link_to t('link.Show'), @book
 |  | 
-= link_to 'Back', books_path
+= link_to t('link.Back'), books_path

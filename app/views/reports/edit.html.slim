@@ -1,6 +1,6 @@
 h1
-  | Editing Report
+  = "#{t('h.Editing')} #{Report.model_name.human}"
 = render 'form', report: @report
-= link_to 'Show', @report
+= link_to t('link.Show'), @report
 |  | 
-= link_to 'Back', reports_path
+= link_to t('link.Back'), reports_path
