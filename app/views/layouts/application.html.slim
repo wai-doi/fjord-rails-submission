@@ -15,6 +15,8 @@ html
         br
         = link_to t('link.home'), root_path
         |  | 
+        = link_to t('link.profile'), current_user
+        |  | 
         = link_to t('link.user_list'), users_path
         |  | 
         = link_to t('link.edit_profile'), edit_user_registration_path
