@@ -11,3 +11,25 @@ end
     body: "#{i}番目のレポートです"
   )
 end
+
+User.create!(
+  email: "doi@example.com",
+  password: 'doidoi',
+  password_confirmation: 'doidoi',
+  name: 'Doi',
+  postcode: '1234567',
+  address: '東京都',
+  biography: 'よろしくお願いします'
+)
+
+5.times do |i|
+  User.create!(
+    email: "user#{i}@example.com",
+    password: 'password',
+    password_confirmation: 'password',
+    name: "ユーザー#{i}",
+    postcode: '1234567',
+    address: '東京都',
+    biography: 'よろしくお願いします'
+  )
+end
