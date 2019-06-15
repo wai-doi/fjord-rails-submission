@@ -299,5 +299,5 @@ Devise.setup do |config|
 
   config.scoped_views = true
 
-  config.omniauth :github, ENV["GITHUB_ID"], ENV["GITHUB_SECRET"], scope: 'user,public_repo'
+  config.omniauth :github, ENV["GITHUB_ID"], ENV["GITHUB_SECRET"], scope: 'user:email'
 end
