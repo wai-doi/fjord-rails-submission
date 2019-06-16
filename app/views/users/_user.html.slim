@@ -1,3 +1,4 @@
+= image_tag user.image, size: '100x100' if user.image.attached?
 p
   strong
     = User.human_attribute_name(:name)
