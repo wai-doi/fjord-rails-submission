@@ -12,7 +12,11 @@ ja:
     login: ログイン
     logout: ログアウト
     edit_profile: プロフィールを編集
+    following: フォローしているユーザ
+    follower: フォローされているユーザ
   h:
     New: 新規
     Editing: 編集中
     profile: プロフィール
+    following: フォローしているユーザ
+    follower: フォローされているユーザ

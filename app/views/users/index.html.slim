@@ -2,7 +2,4 @@ h1
   = User.model_name.human(count: 2)
 
 hr
-- @users.each do |user|
-  = render 'user', user: user
-  = render 'follow_form', user: user
-  hr
+= render 'users', users: @users

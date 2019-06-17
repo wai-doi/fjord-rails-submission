@@ -1,2 +1,2 @@
-- @user.followings.each do |user|
-  = render 'user', user: user
+h1= t('h.following')
+= render 'users', users: @user.followings
