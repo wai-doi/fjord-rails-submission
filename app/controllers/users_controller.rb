@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def update
@@ -13,6 +14,16 @@ class UsersController < ApplicationController
     else
       redirect_to edit_user_registration_url
     end
+  end
+
+  def following
+    @user = User.find(params[:id])
+    render 'show_follow'
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    render 'show_follower'
   end
 
   private

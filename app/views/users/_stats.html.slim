@@ -1,0 +1,7 @@
+= link_to following_user_path(user) do
+  = user.followings.count
+  |  following
+br
+= link_to followers_user_path(user) do
+  = user.followers.count
+  |  followers
