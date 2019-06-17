@@ -5,6 +5,14 @@ ja:
     Edit: 編集
     Destroy: 削除
     Back: 前画面
+    home: ホーム
+    profile: プロフィール
+    user_list: ユーザーの一覧
+    sign_up: サインアップ
+    login: ログイン
+    logout: ログアウト
+    edit_profile: プロフィールを編集
   h:
     New: 新規
     Editing: 編集中
+    profile: プロフィール

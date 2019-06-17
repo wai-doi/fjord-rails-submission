@@ -8,4 +8,30 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
+    p
+      - if user_signed_in?
+        |
+        = current_user.email
+        br
+        = link_to t('link.home'), root_path
+        |  | 
+        = link_to t('link.profile'), current_user
+        |  | 
+        = link_to t('link.user_list'), users_path
+        |  | 
+        = link_to t('link.edit_profile'), edit_user_registration_path
+        |  | 
+        = link_to t('link.logout'), destroy_user_session_path, method: :delete
+      - else
+        = link_to t('link.sign_up'), new_user_registration_path
+        |  | 
+        = link_to t('link.login'), new_user_session_path
+
+    - if notice
+      p#notice
+        = notice
+
+    - if alert
+      p#alert
+        = alert
     = yield

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'reports#index'
+  devise_for :users
+  resources :users, only: %i(index show update)
   resources :reports do
     resources :comments, only: %i(create destroy), module: :reports
   end
