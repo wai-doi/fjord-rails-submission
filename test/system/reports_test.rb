@@ -1,7 +1,6 @@
 require "application_system_test_case"
 
 class ReportsTest < ApplicationSystemTestCase
-  include Devise::Test::IntegrationHelpers
   setup do
     @user = users(:doi)
     sign_in @user
