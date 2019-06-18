@@ -1,43 +1,44 @@
 require "application_system_test_case"
 
 class ReportsTest < ApplicationSystemTestCase
+  include Devise::Test::IntegrationHelpers
   setup do
-    @report = reports(:one)
+    @user = users(:doi)
+    sign_in @user
+    @report = reports(:valid)
   end
 
-  test "visiting the index" do
+  test "一覧画面を表示" do
     visit reports_url
-    assert_selector "h1", text: "Reports"
+    assert_selector "h1", text: "レポート"
   end
 
-  test "creating a Report" do
+  test "新規レポートを作る" do
     visit reports_url
-    click_on "New Report"
+    click_on "新規 レポート"
 
-    fill_in "Body", with: @report.body
-    fill_in "Title", with: @report.title
-    click_on "Create Report"
+    fill_in "タイトル", with: 'データベース学習'
+    fill_in "本文", with: '課題を進めた。'
+    click_on "登録する"
 
     assert_text "Report was successfully created"
-    click_on "Back"
   end
 
-  test "updating a Report" do
+  test "レポートを編集する" do
     visit reports_url
-    click_on "Edit", match: :first
+    click_on "編集", match: :smart
 
-    fill_in "Body", with: @report.body
-    fill_in "Title", with: @report.title
-    click_on "Update Report"
+    fill_in "タイトル", with: 'データベース学習'
+    fill_in "本文", with: '課題を進めた。'
+    click_on "更新する"
 
     assert_text "Report was successfully updated"
-    click_on "Back"
   end
 
-  test "destroying a Report" do
+  test "レポートを削除する" do
     visit reports_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on "削除", match: :smart
     end
 
     assert_text "Report was successfully destroyed"
