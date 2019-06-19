@@ -9,10 +9,12 @@ class RelationshipsTest < ApplicationSystemTestCase
   test 'ユーザーをフォローしてフォローをはずす' do
     visit users_url
     click_on 'Follow', match: :first
-    assert_equal 1, @user.followings.count
+    visit user_url(@user)
+    assert_selector '#followings-count', text: '1'
 
     visit users_url
     click_on 'Unfollow', match: :first
-    assert_equal 0, @user.followings.count
+    visit user_url(@user)
+    assert_selector '#followings-count', text: '0'
   end
 end
