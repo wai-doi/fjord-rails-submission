@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   root 'reports#index'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-  resources :users, only: %i(index show update) do
-    member do
-      get :following, :followers
-    end
+
+  resources :users, only: %i(index show update)
+  resources :users, only: :show do
+    resources :followings, only: :index, module: :users
+    resources :followers, only: :index, module: :users
   end
 
   resources :relationships, only: %i(create destroy)
