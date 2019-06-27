@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'reports#index'
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :users, only: %i(index show update)
   resources :reports do
     resources :comments, only: %i(create destroy), module: :reports
