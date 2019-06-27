@@ -3,7 +3,7 @@ p
   strong
     = User.human_attribute_name(:name)
     | :
-  = user.name
+  = link_to user_name(user.name), user
 p
   strong
     = User.human_attribute_name(:postcode)
