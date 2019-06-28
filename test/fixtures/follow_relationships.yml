@@ -1,0 +1,3 @@
+follow1:
+  following: follower
+  follower: followee
