@@ -1,5 +1,6 @@
 = form_with(model: [commentable, commentable.comments.build], local: true) do |form|
   .field
+    = form.label :body, style: 'display: none;'
     = form.text_area :body
   .actions
     = form.submit

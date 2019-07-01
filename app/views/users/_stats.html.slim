@@ -1,7 +1,9 @@
 table
   tr
     td= link_to t('link.following'), user_followings_path(user)
-    td= user.followings.count
+    td id="followings-count"
+      = user.followings.count
   tr
     td= link_to t('link.follower'), user_followers_path(user)
-    td = user.followers.count
+    td id="followers-count"
+      = user.followers.count
