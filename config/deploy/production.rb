@@ -59,3 +59,16 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+set :branch, 'master'
+
+server('160.16.100.8',
+  user: 'yusuke',
+  roles: %w[web app db],
+  port: 44,
+  ssh_options: {
+    user: 'yusuke',
+    keys: [File.expand_path('~/.ssh/id_rsa')],
+    forward_agent: true,
+  }
+)
