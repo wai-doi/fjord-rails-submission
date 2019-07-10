@@ -131,6 +131,7 @@ namespace :setup do
   desc 'setup config'
   task :config do
     on roles(:app) do |host|
+      execute "mkdir #{shared_path}/config -p"
       %w[master.key database.yml].each do |f|
         upload! "config/#{f}", "#{shared_path}/config/#{f}"
       end
@@ -147,7 +148,7 @@ namespace :setup do
       %w[rails_app.conf].each do |f|
         upload! "config/#{f}", "#{shared_path}/config/#{f}"
         sudo :cp, "#{shared_path}/config/#{f}", "/etc/nginx/conf.d/#{f}"
-        sudo "nginx -s reload"
+        sudo "systemctl restart nginx"
       end
     end
   end
